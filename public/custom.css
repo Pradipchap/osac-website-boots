@@ -1,0 +1,36 @@
+#nav{
+    background-color:#ECF0EC;
+    /* position:fixed; */
+}
+body{
+    background-color: #DCE8D9;
+    position: relative;
+}
+.event
+{
+    
+    height: 500px;
+    position: fixed;
+    background-color: red;
+    width:100vw;
+}
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  .container {
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+  }
+  
+  .card {
+    flex-shrink: 0;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
