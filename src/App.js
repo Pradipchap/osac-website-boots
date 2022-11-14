@@ -1,14 +1,23 @@
 import React from 'react'
-import Navb from './components/navbar'
+import Navbar from './components/navbar'
 import Events from './components/events'
+import Main from './components/main'
+import Community from './components/community'
 export default function App() {
   return (
-    
-      <>
-      <Navb/>
-      <Events/>
+<>
+<Navbar/>
 
-      </>
-    
+
+<Events/>
+
+<div className="all-below">
+<Main/>
+<Community/>
+
+</div>
+
+
+</>
   )
 }
