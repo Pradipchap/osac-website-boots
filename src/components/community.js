@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import js from "../js.png";
 import python from "../python.jpeg";
 import flutter from "../flutter.png";
-
+// import Footer from './footer.js'
 export default class Community extends Component {
   render() {
     const images = [js, python, flutter];
     return (
+      
       <div className="community">
         <div className="title">Our Active Communities and Program</div>
 
@@ -21,7 +22,10 @@ export default class Community extends Component {
             );
           })}
         </div>
+        
       </div>
+      
+      
     );
   }
 }

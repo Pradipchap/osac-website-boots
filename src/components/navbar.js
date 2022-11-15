@@ -1,8 +1,9 @@
 import React from "react";
 // import { Turn as Hamburger } from "hamburger-react";
 import { useState } from "react";
-import logo from "../logo.png";
+import logo from "../osacWhiteLogo.png";
 import Sidebar from "./sidebar";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [hamclass, sethamclass] = useState('navItems ham close');
@@ -35,8 +36,8 @@ export default function Navbar() {
       </div>
         <div className="leftItems">
           <img src={logo} className="navItems logo" alt="logo of OSAC" />
-          <div className="navItems">HOME</div>
-          <div className="navItems">EVENTS</div>
+          <Link className="navItems" to='/'>HOME</Link>
+          <Link className="navItems" to='./events' >EVENTS</Link>
           <div className="navItems">NOTICES</div>
         </div>
         <div className="rightItems">
