@@ -3,9 +3,11 @@ import Navbar from './components/navbar'
 import Events from './components/events'
 import Main from './components/main'
 import Community from './components/community'
+
 export default function App() {
   return (
 <>
+
 <Navbar/>
 
 

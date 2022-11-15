@@ -1,23 +1,53 @@
-import React, { Component } from 'react'
-import logo from '../logo.png'
-export default class Navbar extends Component {
-  render() {
-    return (
-      <div className='navbar'>
+import React from "react";
+// import { Turn as Hamburger } from "hamburger-react";
+import { useState } from "react";
+import logo from "../logo.png";
+import Sidebar from "./sidebar";
+
+export default function Navbar() {
+  const [hamclass, sethamclass] = useState('navItems ham close');
+  const [classofsidebar, setclassofsidebar] = useState('close')
+ const clickHamburger=()=>{
+  // hamclass==='navItems ham close'?sethamclass('navItems ham open'):sethamclass('navItems ham close')
+  console.log('ham opened')
+  if(hamclass==='navItems ham close')
+  {
+    sethamclass('navItems ham open')
+    setclassofsidebar('open')
+  }
+  else
+  {
+    sethamclass('navItems ham close')
+    setclassofsidebar('close')
+  }
+
+  }
+  // const [first, setfirst] = useState(second)
+
+  return (
+    <div>
+      <div className="navbar">
+        
+      <div className={hamclass} onClick={clickHamburger}>
+        <div className="f f1"></div>
+        <div className="f f2"></div>
+        <div className="f f3"></div>
+      </div>
         <div className="leftItems">
-       <img src={logo} className="navItems logo" alt="logo of OSAC" />
-        <div className="navItems">HOME</div>
-        <div className="navItems">EVENTS</div>
-        <div className="navItems">NOTICES</div>
+          <img src={logo} className="navItems logo" alt="logo of OSAC" />
+          <div className="navItems">HOME</div>
+          <div className="navItems">EVENTS</div>
+          <div className="navItems">NOTICES</div>
         </div>
         <div className="rightItems">
-        <div className="navItems">WANT TO BE A MEMBER ?</div>
-        <div className="navItems search">SEARCH</div>
+          <div className="navItems">WANT TO BE A MEMBER ?</div>
+          <div className="navItems search">SEARCH</div>
 
         </div>
-
-
+        
       </div>
-    )
-  }
+      {/* <Hamburger /> */}
+      <Sidebar c={classofsidebar}/>
+    </div>
+  );
 }
