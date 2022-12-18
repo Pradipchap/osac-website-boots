@@ -1,7 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 import ascol from "../group.jpeg";
-export default class Main extends Component {
-  render() {
+import { useState } from "react";
+export default function Main(){
+  
+    const [state, setstate] = useState('false');
+const changevalueonScroll=()=>{
+
+
+const scrollvalue=document.documentElement.scrollTop;
+
+if (scrollvalue>618)
+{
+
+setstate('true');
+}
+
+else
+
+setstate ('false');
+}
+window.addEventListener('scroll',changevalueonScroll);
     return (
       <div className="description">
         <div className="desc-img">
@@ -17,21 +35,17 @@ export default class Main extends Component {
             tempore esse amet alias ut molestias veniam repudiandae facilis quo
             commodi sapiente eos tenetur neque incidunt accusamus reiciendis,
             fuga ipsam itaque enim voluptates recusandae necessitatibus?
-            Asperiores enim voluptatem veritatis deserunt consequatur dolores
-            commodi quaerat, maiores recusandae nobis autem veniam eligendi
-            optio vero esse dolorem consectetur praesentium. Mollitia neque
-            facere dolores ad ea facilis modi vitae quidem laborum ullam
-            eligendi voluptate illum, sunt excepturi, nihil libero architecto
+            Asperiores enim voluptatem  architecto
             sequi totam. Ex odio possimus quae eaque fugiat nesciunt natus,
             minima adipisci doloribus nulla explicabo recusandae vero corrupti
             veritatis architecto, debitis inventore illum! Minima ut quidem
             vero, doloremque natus veniam atque quas unde voluptate!
           </p>
-          <div className="button">
+          <div className={`button ${state}`}>
             <p className="btn-name">Join us</p>
           </div>
         </div>
       </div>
     );
   }
-}
+

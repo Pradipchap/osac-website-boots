@@ -19,8 +19,9 @@ export default function App() {
             element={
               <div className='homelow'>
               
-                <Hometop/>
+               
                 <div className="all-below">
+                <Hometop/>
                 <Main />
                 <Community />
                 <Footer/>
