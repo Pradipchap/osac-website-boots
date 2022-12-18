@@ -1,5 +1,5 @@
 import React from "react";
-import { AlignCenter } from "react-feather";
+// import { AlignCenter } from "react-feather";
 
 export default function Hometop() {
   return (

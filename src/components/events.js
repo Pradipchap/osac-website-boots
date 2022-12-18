@@ -7,7 +7,10 @@ import React, { Component } from "react";
 export default class Events extends Component {
   render() {
     // const pictures = [pic1, pic2, pic3];
-    return (<div className="af"></div>
+    return (<div className="af" style={{backgroundColor:'black',width:'100vw',height:'100vh'}}>
+      <div className="hello"></div>
+      
+    </div>
     );
   }
 }

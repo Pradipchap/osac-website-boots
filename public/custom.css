@@ -52,12 +52,20 @@ border: #00a99d;
     color: white;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     justify-items: center;
     align-items: center;
 margin-bottom: 0.5rem;
 background-color:#1a9e95;
 
+}
+.second{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    margin: 30px;
 }
 
 .navbar {
@@ -1053,4 +1061,12 @@ align-items: center;
     background-color: #00a99d;
 
     
+}
+.blog{
+    position:absolute;
+    margin-top: 10rem;
+    height: 100rem;
+    width: 100%;
+border: 2px solid black;
+display: flex;
 }
