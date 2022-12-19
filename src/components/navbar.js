@@ -6,6 +6,7 @@ import logo from "../osacWhiteLogo.png";
 import Sidebar from "./sidebar";
 import { Link } from "react-router-dom";
 import { GitHub } from "react-feather";
+
 // import LightModeIcon from '@mui/icons-material/LightMode';
 
 export default function Navbar(props) {
@@ -45,7 +46,12 @@ export default function Navbar(props) {
       <div className="join">
         <a
           className="first"
-          style={{ cursor: "pointer", color: "white", textDecoration: "none",marginLeft:'30px' }}
+          style={{
+            cursor: "pointer",
+            color: "white",
+            textDecoration: "none",
+            marginLeft: "30px",
+          }}
           href="https://github.com/OSAC/OSAC-Forum"
           target="_"
         >
@@ -53,18 +59,25 @@ export default function Navbar(props) {
           {<GitHub height="20px" />}
         </a>
         <div className="second">
-          <Link
+          <a
             className=""
-            to={"./login"}
+            href={"./login"}
             onClick={props.logfunc}
-            style={{ cursor: "pointer",marginRight:'60px',textDecoration:'none',color:'white',fontWeight:'bold' }}
-          >
-            {props.is ? "logout" : "login"}{" "}
-          </Link>
+            style={{
+              cursor: "pointer",
+              marginRight: "60px",
+              textDecoration: "none",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >{props.name==="login"?"login":<div className="profile"><p>{props.name.charAt(0)}</p></div >}
+            
+            {/* {props.name} */}
+          </a>
           <div
             className={mode}
             onClick={clickmode}
-            style={{ borderRadius: "100%",marginRight:'20px' }}
+            style={{ borderRadius: "100%", marginRight: "20px" }}
           ></div>
         </div>
       </div>
@@ -86,9 +99,11 @@ export default function Navbar(props) {
             <p>Blogs</p>
           </Link>
           {/* { !props.is?<Link className="navItems" to='./login'><p>Login</p></Link>:<p className="navItems" onClick={props.logfunc} style={{cursor:'pointer'}}>Logout</p>} */}
-          <Link className="navItems" to="./createblog">
-            <p>create</p>
-          </Link>
+          {props.is && (
+            <Link className="navItems" to="./createblog">
+              <p>create</p>
+            </Link>
+          )}
         </div>
         <div className="rightItems">
           <div className="navItems search">

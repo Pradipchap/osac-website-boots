@@ -1,0 +1,61 @@
+/* position:'absolute',marginTop:'10rem',backgroundColor:'white',display:'flex',flexDirection:'column'}} */
+
+.loginPage{
+    /* position: absolute; */
+    width: 50rem;
+    height: 40rem;
+
+    /* background-color: white; */
+    display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+/* margin: auto; */
+  align-items: center;
+  margin-top: 10rem;
+
+
+}
+.login{
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    justify-items: center;
+}
+.loginPage p{
+    font-size: 20px;
+    font-weight: bolder;
+    color: black;
+}
+.login-with-google-btn{
+    font-size: 16px;
+    background-color:#00a99d;
+    background-color: #28282B;
+    height: 3rem;
+    width: 20rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.login-with-google-btn:hover{
+    background-color: #0d0d49;
+}
+.profile{
+    height: 2.2rem;
+    width: 2.2rem;
+    border-radius: 100%;
+display: flex;
+
+justify-content: center;
+align-items: center;
+
+    background-color:#bb3bc3;
+}
+.profile p{
+    color: white;
+    font-size: large;
+
+}
