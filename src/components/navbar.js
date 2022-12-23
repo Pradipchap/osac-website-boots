@@ -7,9 +7,11 @@ import Sidebar from "./sidebar";
 import { Link } from "react-router-dom";
 import { GitHub } from "react-feather";
 
+
 // import LightModeIcon from '@mui/icons-material/LightMode';
 
 export default function Navbar(props) {
+
   const [hamclass, sethamclass] = useState("navItems ham close");
   const [classofsidebar, setclassofsidebar] = useState("close");
   const [mode, setmode] = useState("light");
@@ -24,6 +26,7 @@ export default function Navbar(props) {
       setnavcolor("#28282B");
     }
   };
+
 
   const clickHamburger = () => {
     // hamclass==='navItems ham close'?sethamclass('navItems ham open'):sethamclass('navItems ham close')
@@ -70,9 +73,10 @@ export default function Navbar(props) {
               color: "white",
               fontWeight: "bold",
             }}
-          >{props.name==="login"?"login":<div className="profile"><p>{props.name.charAt(0)}</p></div >}
+          >
+            {/* {props.name==="login"?"login":<div className="profile"><p>{props.name.charAt(0)}</p></div >} */}
             
-            {/* {props.name} */}
+            {props.name}
           </a>
           <div
             className={mode}
@@ -95,7 +99,7 @@ export default function Navbar(props) {
           <Link className="navItems" to="./events">
             <p>Events</p>
           </Link>
-          <Link className="navItems" to="./blogs">
+          <Link className="navItems" to="./blog">
             <p>Blogs</p>
           </Link>
           {/* { !props.is?<Link className="navItems" to='./login'><p>Login</p></Link>:<p className="navItems" onClick={props.logfunc} style={{cursor:'pointer'}}>Logout</p>} */}
@@ -103,7 +107,17 @@ export default function Navbar(props) {
             <Link className="navItems" to="./createblog">
               <p>create</p>
             </Link>
-          )}
+            )}
+            {props.name==='pradipcpgn@gmail.com'&& <Link className="navItems" to="./admin">
+            <p>admin</p>
+          </Link>
+          }
+          {/* <Link className="navItems" to="./admin">
+            <p>admin</p>
+          </Link> */}
+
+           
+          
         </div>
         <div className="rightItems">
           <div className="navItems search">

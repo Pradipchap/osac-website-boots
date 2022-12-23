@@ -1,0 +1,29 @@
+.allBlog{
+    position: absolute;
+    background-color:orange;
+
+    height: 200rem;
+    width: 100vw;
+    
+}
+.allBlogs{
+    background-color: green;
+display: flex;
+flex-wrap: wrap;
+
+    margin-top: 10rem;
+}
+.blogcard{
+    height: 40rem;
+    background-color:blue;
+min-width: 40rem;
+    margin: auto;
+    max-width:70rem ;
+    border: 5px solid white;
+    
+
+
+}
+.published-title{
+
+}

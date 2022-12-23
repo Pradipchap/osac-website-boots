@@ -1,0 +1,29 @@
+.admin{
+    position: absolute;
+    background-color:black;
+
+
+    /* margin-top: 4rem; */
+    width: 100vw;
+
+
+    /* justify-content: center; */
+    /* align-items: center; */
+
+}
+.blogs-admin{
+
+    /* height: 30rem; */
+    width: 100vw;
+    display: flex;
+    margin-top: 10rem;
+    flex-wrap: wrap;
+    background-color: green;
+
+}
+.blogss{
+    height: 30rem;
+    width: 40rem;
+    margin: auto;
+    background-color: red;
+}

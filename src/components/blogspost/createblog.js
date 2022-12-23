@@ -1,9 +1,10 @@
 import React from "react";
 import { useState,useEffect } from "react";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection,  } from "firebase/firestore";
 import { db } from "../config";
 import { auth } from "../config";
 import {  useNavigate } from "react-router-dom";
+
 
 export default function Create(props) {
   const postCollectionRef = collection(db, "blogpost");
@@ -15,6 +16,7 @@ export default function Create(props) {
     await addDoc(postCollectionRef, {
       title,
       desc,
+      
       author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
     });
     navigate("/")
