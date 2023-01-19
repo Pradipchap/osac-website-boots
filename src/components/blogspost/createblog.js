@@ -1,33 +1,31 @@
 import React from "react";
-import { useState,useEffect } from "react";
-import { addDoc, collection,  } from "firebase/firestore";
+import { useState, useEffect } from "react";
+import { addDoc, collection } from "firebase/firestore";
 import { db } from "../config";
 import { auth } from "../config";
-import {  useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 export default function Create(props) {
   const postCollectionRef = collection(db, "blogpost");
   const [title, settitle] = useState("");
   const [desc, setdesc] = useState("");
 
-  let navigate=useNavigate();
+  let navigate = useNavigate();
   const createpost = async () => {
     await addDoc(postCollectionRef, {
       title,
       desc,
-      
-      author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+      approvedStatus:false ,
+
+      author: { name: auth.currentUser.displayName, id: auth.currentUser.uid},
     });
-    navigate("/")
+    navigate("/");
   };
   useEffect(() => {
-    if(!props.isAuth){
+    if (!props.isAuth) {
       navigate("../login");
     }
-
-  }, )
-  
+  });
 
   return (
     <>

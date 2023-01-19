@@ -1,29 +1,28 @@
 import React from "react";
 import Navbar from "./components/navbar";
-import Events from "./components/events";
-import Main from "./components/main";
-import Community from "./components/community";
-import Hometop from "./components/hometop";
-import Footer from "./components/footer";
+// import Events from "./components/events";
+
 import Create from "./components/blogspost/createblog";
 import Login from "./components/blogspost/login";
-import { BrowserRouter as Router, Routes, Route,  } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
-import { auth ,provider} from "../src/components/config";
+import { auth, provider } from "../src/components/config";
 
 import { signInWithPopup } from "firebase/auth";
 import Admin from "./components/admin";
 import Blog from "./components/blogspost/blog";
-
+import Home from "./components/home";
+import Protected from "./components/blogspost/protected";
+import Singleblog from "./components/singleblog";
 
 export default function App() {
- 
   const [isAuth, setisAuth] = useState(localStorage.getItem("isAuth"));
   // const [name, setname] = useState(localStorage.getItem("name"));
   // if(auth===null){
   // setname('Login')
   // }
+
   const [name, setname] = useState(localStorage.getItem("name"));
 
   console.log(localStorage.getItem("isAuth"));
@@ -33,27 +32,25 @@ export default function App() {
       setname("Login");
       localStorage.clear();
       setisAuth(false);
-      
-      
-
+      window.location.href = '/';
     });
   };
-  const username=()=>{
-    if(name!==null)
-    return name
-    else
-    return "login";
-  }
+  const username = () => {
+    if (name !== null) return name;
+    else return "login";
+  };
+  // const navigate = useNavigate();
 
   const signInWithGoogle = async () => {
     await signInWithPopup(auth, provider).then((result) => {
-      localStorage.setItem("isAuth",true,)
+      localStorage.setItem("isAuth", true);
 
-      localStorage.setItem("name",auth.currentUser.email,)
-      localStorage.setItem("uid",auth.currentUser.uid,)
-      setisAuth(true)
-setname(auth.currentUser.email)
-      window.location.pathname("/");
+      localStorage.setItem("name", auth.currentUser.email);
+      localStorage.setItem("uid", auth.currentUser.uid);
+      setisAuth(true);
+      setname(auth.currentUser.email);
+      window.location.href = '/';
+      
     });
   };
 
@@ -67,25 +64,10 @@ setname(auth.currentUser.email)
           // name={name !== null ? name : "login"}
           name={username()}
           setname={setname}
-
-          
         />
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <div className="homelow">
-                <div className="all-below">
-                  <Hometop />
-                  <Main />
-                  <Community />
-                  <Footer />
-                </div>
-              </div>
-            }
-          />
-          <Route exact path="/events" element={<Events />} />
+          <Route exact path="/" element={<Home />} />
+          {/* <Route exact path="/events" element={<Events />} /> */}
           <Route
             exact
             path="/createblog"
@@ -94,13 +76,18 @@ setname(auth.currentUser.email)
           <Route
             exact
             path="/login"
-            element={<Login setisAuth={setisAuth} signInWithGoogle={signInWithGoogle} />}
+            element={
+              <Login
+                setisAuth={setisAuth}
+                signInWithGoogle={signInWithGoogle}
+              />
+            }
           />
-          <Route exact path='/blog' element={<Blog />}/>
-          {username()==="pradipcpgn@gmail.com"? <Route
+          <Route exact path="/blog" element={<Blog />} />
+          {/* {username()==="pradipcpgn@gmail.com"? <Route
             exact
             path="/admin"
-            element={<Admin />}
+            element={username()==="pradipcpgn@gmail.com"?<Admin />:<Login/>}
           />:
           <Route
           exact
@@ -115,8 +102,17 @@ setname(auth.currentUser.email)
               </div>
             </div>
           }
-        />}
-           {/* <Route
+        />} */}
+
+          <Route element={<Protected  user={username}/>}>
+            <Route exact path="/admin" element={<Admin />} />
+          </Route>
+
+          <Route exact path="/singleblog" element={<Singleblog/>}/>
+
+          
+
+          {/* <Route
             exact
             path="/admin"
             element={<Admin/>}

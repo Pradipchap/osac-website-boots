@@ -27,7 +27,7 @@ window.addEventListener('scroll',changevalueonScroll);
         </div>
 
         <div className="desc-text">
-          <p className="about-us">About Us</p>
+          <p className="about-us" style={{color:'white'}}>About Us</p>
           <p className="para">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
             dolore minima rerum, tempora aperiam aut minus ipsum vero deserunt.
