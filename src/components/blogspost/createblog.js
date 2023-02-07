@@ -15,9 +15,9 @@ export default function Create(props) {
     await addDoc(postCollectionRef, {
       title,
       desc,
-      approvedStatus:false ,
+      approvedStatus: false,
 
-      author: { name: auth.currentUser.displayName, id: auth.currentUser.uid},
+      author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
     });
     navigate("/");
   };
@@ -30,31 +30,57 @@ export default function Create(props) {
   return (
     <>
       <div className="blog">
-        <div className="addblog"> addBlog</div>
+
         <div
           className="publishedBlogs"
-          style={{ display: "flex", flexDirection: "column" }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+
+
+            height: "40rem",
+            width:'40rem'
+          }}
         >
-          <div className="name">
+          <div class="input-group">
+            <label class="label">Name</label>
             <input
-              type="text"
+              autocomplete="off"
+              name="Email"
+              id="Email"
+              class="input"
+              cols='45'
+              
+            style={{width:'25rem',}}
+              type="email"
               onChange={(event) => {
                 settitle(event.target.value);
               }}
-            />
+            ></input>
+            <div></div>
           </div>
-          <div className="input">
+          <div class="input-group">
+            <label class="label">Content</label>
             <textarea
-              name="blog"
-              id="b"
-              cols="30"
-              rows="10"
+              autocomplete="off"
+              name="Email"
+              id="Email"
+              rows="30"
+              cols='45'
+              height="4rem"
+              style={{width:'25rem',height:'25rem'}}
+              className="input"
+              type="email"
               onChange={(event) => {
                 setdesc(event.target.value);
               }}
-            ></textarea>
+            />
+            <div></div>
           </div>
-          <button onClick={createpost}>Submit</button>
+
+          <button className="btn" onClick={createpost}>
+            Submit
+          </button>
         </div>
       </div>
     </>

@@ -1,10 +1,11 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   getDocs,
   collection,
   addDoc,
-  updateDoc,doc
+  updateDoc,
+  doc,
 } from "firebase/firestore";
 import { db } from "./config";
 
@@ -21,50 +22,52 @@ export default function Admin() {
       id: id,
       name: name,
     });
-    
   };
- 
-  const update=(id)=>{
-    const docRef=doc(db,"blogpost",id);
-    updateDoc(docRef,{approvedStatus:true})
 
-  }
+  const update = (id) => {
+    const docRef = doc(db, "blogpost", id);
+    updateDoc(docRef, { approvedStatus: true });
+  };
+
   
-
-  useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postCollectionRef);
       setpostLists(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
+      console(1)
     };
 
     getPosts();
-  });
+  
 
   return (
     <div className="admin">
       <div className="blogs-admin">
         {postLists.map((element) => {
           return (
-            <div className="blogss" key={element.id}>
-              <h1>{element.title}</h1>
-              <h1>{element.desc}</h1>
-              <h1>{element.id}</h1>
-              <h1>{element.author.name}</h1>
-              <button
-                onClick={() => {
-                  publishpost(
-                    element.title,
-                    element.desc,
-                    element.id,
-                    element.author.name
-                  );
-                  update(element.id);
-                }}
-                disabled={element.approvedStatus===true?true:false}
-              >
-                <h1>{element.approvedStatus===true?'approved':'publish'}</h1>
-              </button>
-            </div>
+         
+              <div className="blogss" key={element.id}>
+                <h1>{element.title}</h1>
+                <h1>{element.desc}</h1>
+                <h1>{element.id}</h1>
+                <h1>{element.author.name}</h1>
+                <button
+                  onClick={() => {
+                    publishpost(
+                      element.title,
+                      element.desc,
+                      element.id,
+                      element.author.name
+                    );
+                    update(element.id);
+                  }}
+                  disabled={element.approvedStatus === true ? true : false}
+                >
+                  <h1>
+                    {element.approvedStatus === true ? "approved" : "publish"}
+                  </h1>
+                </button>
+              </div>
+
           );
         })}
       </div>

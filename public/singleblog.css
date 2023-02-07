@@ -5,9 +5,11 @@
     width: 100vw;
     margin-top: 10rem;
 }
-body{
+
+/* body {
     background-color: rgb(232, 235, 241);
-}
+} */
+
 .oneblogs {
     /* margin-top: 10rem; */
     /* background-color: green; */
@@ -15,7 +17,7 @@ body{
     width: 90vw;
 
     display: flex;
-    margin-left:5% ;
+    margin-left: 5%;
     margin-right: 5%;
     flex-direction: column;
     justify-content: center;
@@ -35,19 +37,32 @@ body{
     font-size: 2rem;
     margin-bottom: 2rem;
 }
-.photos{
+
+.photos {
     height: 30rem;
     width: 80vw;
-    background-color: pink;
+    /* background-color: pink; */
     margin-bottom: 5rem;
+    /* object-fit:cover; */
+
+
 }
-.authoranddate{
+
+.photos img {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.authoranddate {
     font-size: 1rem;
     margin-bottom: 1.5rem;
     font-weight: bold;
 
 }
-.maindesc{
+
+.maindesc {
     font-size: 1.3rem;
     margin-bottom: 10rem;
 }

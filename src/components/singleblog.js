@@ -1,4 +1,5 @@
 import React from "react";
+import photo from '.././pexels.jpg'
 
 export default function Singleblog() {
   return (
@@ -9,7 +10,7 @@ export default function Singleblog() {
         <div className="shortintro">
           OSM mapathon oraganized with the support of open mapping hub
         </div>
-        <div className="photos"></div>
+        <div className="photos"><img src={photo} alt="nm" /></div>
         <div className="maindesc">
           A community forum or discussion group is essentially the original
           purpose of both Usenet and Google Groups. They allow people to have

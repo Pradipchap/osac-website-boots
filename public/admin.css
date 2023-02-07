@@ -18,12 +18,13 @@
     display: flex;
     margin-top: 10rem;
     flex-wrap: wrap;
-    background-color: green;
+
 
 }
 .blogss{
     height: 30rem;
     width: 40rem;
     margin: auto;
-    background-color: red;
+background-color: white;
 }
+/* ///// */

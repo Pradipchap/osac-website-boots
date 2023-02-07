@@ -1,30 +1,106 @@
 .allBlog {
     position: absolute;
-    background-color: orange;
+    /* background-color: orange; */
 
 
     width: 100vw;
 
 }
+body{
+    background-color: white;
+}
 
 .allBlogs {
-    background-color: green;
+    /* background-color: green; */
     display: flex;
     flex-wrap: wrap;
-
+    width: 100vw;
     margin-top: 10rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .blogcard {
-    height: 40rem;
-    background-color: blue;
+    height: 21rem;
+    /* background-color: blue; */
     min-width: 40rem;
-    margin: auto;
+    margin-bottom:3rem;
     max-width: 70rem;
-    border: 5px solid white;
-
+    /* border: 1px solid grey; */
+    /* box-shadow: 2px 2px 20px 3px rgb(209, 209, 209); */
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+    padding: 10px;
+    background-color: #28282B;
+    color: white;
+    border-radius: 2rem;
+    background-color: black;
+    /* background-image: radial-gradient(circle at left , #00a99d 70%,white 30%); */
+background-color: white;
 
 
 }
 
-.published-title {}
+.published-title {
+    
+    color:white;
+    color: #00a99d;
+    color: #28282B;
+    color: black;
+    font-weight:500;
+    font-size: 3em;
+    line-height: 86%;
+}
+
+.imgg {
+
+    height: 100%;
+    width: 70%;
+    margin: 0;
+    /* background-color: ; */
+}
+
+.blogImg {
+    height: 100%;
+    width: 100%;
+}
+
+.rightel {
+    height: 13rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    padding: 0;
+
+}
+.rightel h2{
+    font-size: 16px;
+
+}
+
+.rightel .descc{
+    font-weight: normal;
+    font-size: 1rem;
+    color: rgb(34, 33, 33);
+    /* color: white; */
+
+}
+.rightel .author{
+    /* color:grey;
+     */
+     color: black;
+
+    font-weight: 600;
+
+    align-self: flex-start;
+    justify-self: flex-start;
+    margin-top: 1em;
+
+
+}
