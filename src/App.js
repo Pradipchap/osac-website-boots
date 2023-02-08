@@ -15,6 +15,7 @@ import Blog from "./components/blogspost/blog";
 import Home from "./components/home";
 import Protected from "./components/blogspost/protected";
 import Singleblog from "./components/singleblog";
+import Message from "./components/blogspost/eachblog";
 
 export default function App() {
   const [isAuth, setisAuth] = useState(localStorage.getItem("isAuth"));
@@ -32,7 +33,7 @@ export default function App() {
       setname("Login");
       localStorage.clear();
       setisAuth(false);
-      window.location.href = '/';
+      window.location.href = "/";
     });
   };
   const username = () => {
@@ -49,8 +50,7 @@ export default function App() {
       localStorage.setItem("uid", auth.currentUser.uid);
       setisAuth(true);
       setname(auth.currentUser.email);
-      window.location.href = '/';
-      
+      window.location.href = "/";
     });
   };
 
@@ -104,20 +104,14 @@ export default function App() {
           }
         />} */}
 
-          <Route element={<Protected  user={username}/>}>
+          <Route element={<Protected user={username} />}>
             <Route exact path="/admin" element={<Admin />} />
           </Route>
 
-          <Route exact path="/singleblog" element={<Singleblog/>}/>
 
-          
 
-          {/* <Route
-            exact
-            path="/admin"
-            element={<Admin/>}
-            from='/'
-          /> */}
+         
+
         </Routes>
         {/* <Login setisAuth={setisAuth}/> */}
       </Router>

@@ -1,6 +1,14 @@
 .formargin{
-    margin-top: 10rem;
-    background-color: red;
+    position: absolute;
+    margin-top: 15rem;
+
     height: 100rem;
     width: 100rem;
+    display: flex;
+    justify-content: center;
+}
+.each{
+    height: 20rem;
+    width: 20vw;
+    background-color: green;
 }

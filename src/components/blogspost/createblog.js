@@ -1,26 +1,34 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp} from "firebase/firestore";
 import { db } from "../config";
 import { auth } from "../config";
 import { useNavigate } from "react-router-dom";
 
 export default function Create(props) {
-  const postCollectionRef = collection(db, "blogpost");
+  const postCollectionRef = collection(db, "blogpost",);
   const [title, settitle] = useState("");
   const [desc, setdesc] = useState("");
 
   let navigate = useNavigate();
-  const createpost = async () => {
-    await addDoc(postCollectionRef, {
-      title,
-      desc,
-      approvedStatus: false,
+  try {
+    var createpost = async () => {
+      await addDoc(postCollectionRef,{
+        timestamp:serverTimestamp(),
+        title,
+        desc,
+        approvedStatus: false,
 
-      author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
-    });
-    navigate("/");
-  };
+        author: {
+          name: auth.currentUser.displayName,
+          id: auth.currentUser.uid,
+        },
+      });
+      navigate("/");
+    };
+  } catch (err) {
+    console.log("the error is" + err);
+  }
   useEffect(() => {
     if (!props.isAuth) {
       navigate("../login");
@@ -30,28 +38,25 @@ export default function Create(props) {
   return (
     <>
       <div className="blog">
-
         <div
           className="publishedBlogs"
           style={{
             display: "flex",
             flexDirection: "column",
 
-
             height: "40rem",
-            width:'40rem'
+            width: "40rem",
           }}
         >
-          <div class="input-group">
-            <label class="label">Name</label>
+          <div className="input-group">
+            <label className="label">Name</label>
             <input
-              autocomplete="off"
+              autoComplete="off"
               name="Email"
               id="Email"
-              class="input"
-              cols='45'
-              
-            style={{width:'25rem',}}
+              className="input"
+              cols="45"
+              style={{ width: "25rem" }}
               type="email"
               onChange={(event) => {
                 settitle(event.target.value);
@@ -59,16 +64,16 @@ export default function Create(props) {
             ></input>
             <div></div>
           </div>
-          <div class="input-group">
-            <label class="label">Content</label>
+          <div className="input-group">
+            <label className="label">Content</label>
             <textarea
-              autocomplete="off"
+              autoComplete="off"
               name="Email"
               id="Email"
               rows="30"
-              cols='45'
+              cols="45"
               height="4rem"
-              style={{width:'25rem',height:'25rem'}}
+              style={{ width: "25rem", height: "25rem" }}
               className="input"
               type="email"
               onChange={(event) => {

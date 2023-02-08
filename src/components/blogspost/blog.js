@@ -3,18 +3,14 @@ import { useState, useEffect } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../config";
 import banner2 from "../../banner2.png";
+
 // import Eachblog from "./eachblog";
 
+// import { useNavigate } from "react-router-dom";
+
 export default function Blog() {
-  // const [blog, setblog] = useState({})
-  // const passblog=({element})=>{
-  //   setblog({element});
+  // let navigate = useNavigate();
 
-  // }
-
-  // const [addedBlogs, setaddedBlogs] = useState([        {id:'123',title:'f',desc:'df',name:'234'},
-  // {id:'345',title:'f',desc:'df',name:'234'},
-  // {id:'345',title:'f',desc:'df',name:'234'}])
   const [postLists, setpostLists] = useState([]);
 
   const repostCollectionRef = collection(db, "repost");
@@ -26,18 +22,16 @@ export default function Blog() {
 
   // ];
 
-    
-    useEffect(() => {
-      const getPosts = async () => {
-        const data = await getDocs(repostCollectionRef,);
-        setpostLists(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
-        console.log(1)
-      };
-  
-      getPosts();
-      
-    },[repostCollectionRef] )
-    
+  useEffect(() => {
+    const getPosts = async () => {
+      const data = await getDocs(repostCollectionRef);
+      setpostLists(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
+      console.log("fetching from database");
+    };
+
+    getPosts();
+    console.log(1);
+  }, []);
 
   // const hello = [
   //   {
@@ -69,8 +63,8 @@ export default function Blog() {
                 <div className="author">
                   <h2>- by {element.author}</h2>
                   <h2>{element.id}</h2>
+
                 </div>
-              
               </div>
             </div>
           );
