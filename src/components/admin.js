@@ -6,23 +6,25 @@ import {
   addDoc,
   updateDoc,
   doc,
+  query,
+  orderBy,
 } from "firebase/firestore";
 import { db } from "./config";
 import { useEffect } from "react";
 
 export default function Admin() {
   const [postLists, setpostLists] = useState([]);
- 
 
   const postCollectionRef = collection(db, "blogpost");
   const repostCollectionRef = collection(db, "repost");
   // const docRef = doc(db, "blogpost", "yftq9RGp4jWNSyBZ1D6L");
-  const publishpost = async (title, desc, id, name) => {
+  const publishpost = async (title, desc, id, name, timestamp) => {
     await addDoc(repostCollectionRef, {
       title: title,
       desc: desc,
       id: id,
       name: name,
+      timestamp: timestamp,
     });
   };
 
@@ -32,12 +34,11 @@ export default function Admin() {
   };
 
   useEffect(() => {
-
     const getPosts = async () => {
       // let setpostLists=[];
-      let data = await getDocs(postCollectionRef);
-      setpostLists (data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
-
+      // let data = await getDocs(postCollectionRef);
+      let data = await getDocs(query(postCollectionRef, orderBy("timestamp")));
+      setpostLists(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
 
       console.log(1);
       // console.log(2);
@@ -62,7 +63,9 @@ export default function Admin() {
                     element.title,
                     element.desc,
                     element.id,
-                    element.author.name
+
+                    element.author.name,
+                    element.timestamp
                   );
                   update(element.id);
                 }}

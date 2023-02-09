@@ -211,7 +211,7 @@ body {
     height: 35rem;
     width: 100%;
     top: -80px;
-    /* background:linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(../src/pexels.jpg) no-repeat center bottom/cover; */
+   
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -219,6 +219,12 @@ body {
     justify-items: center;
     justify-content: center;
     align-items: center;
+    background: url(pexels.jpg) no-repeat center center fixed; 
+ /* background:linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(pexels.jpg) no-repeat center fixed; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
 
 }

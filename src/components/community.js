@@ -62,7 +62,7 @@ export default function Community() {
             <div className="card-desc">{element.desc}</div>
             <a href={element.link}>
               Read more
-              {<span class="material-symbols-outlined">arrow_forward</span>}
+              {<span className="material-symbols-outlined">arrow_forward</span>}
             </a>
           </div>
         );

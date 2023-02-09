@@ -1,8 +1,9 @@
 import React from "react";
-import pexels from "../group.jpeg"
+
 export default function Hometop() {
+  
   return (
-    <div className="hometop" style={{background:`url(${pexels})  no-repeat `}}>
+    <div className="hometop" >
       <div className="trans">
         <section className="text head">OSAC</section>
         <section className="text sub">let's learn together</section>

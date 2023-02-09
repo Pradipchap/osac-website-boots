@@ -1,20 +1,20 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { addDoc, collection, serverTimestamp} from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../config";
 import { auth } from "../config";
 import { useNavigate } from "react-router-dom";
 
 export default function Create(props) {
-  const postCollectionRef = collection(db, "blogpost",);
+  const postCollectionRef = collection(db, "blogpost");
   const [title, settitle] = useState("");
   const [desc, setdesc] = useState("");
 
   let navigate = useNavigate();
   try {
     var createpost = async () => {
-      await addDoc(postCollectionRef,{
-        timestamp:serverTimestamp(),
+      await addDoc(postCollectionRef, {
+        timestamp: serverTimestamp(),
         title,
         desc,
         approvedStatus: false,

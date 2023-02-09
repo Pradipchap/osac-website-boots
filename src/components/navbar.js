@@ -46,7 +46,7 @@ export default function Navbar(props) {
   };
 
   const clickHamburger = () => {
-    // hamclass==='navItems ham close'?sethamclass('navItems ham open'):sethamclass('navItems ham close')
+    // hamclassName==='navItems ham close'?sethamclass('navItems ham open'):sethamclass('navItems ham close')
     console.log("ham opened");
     if (hamclass === "navItems ham close") {
       sethamclass("navItems ham open");

@@ -66,3 +66,75 @@
     font-size: 1.3rem;
     margin-bottom: 10rem;
 }
+.cardbc {
+    width: 24rem;
+    height: 27.5rem;
+    background: #00a99d;
+    transition: 1s ease-in-out;
+    clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin: auto;
+
+  }
+  
+  .cardbc span {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 1em;
+    font-size: 1em;
+  }
+  
+  .cardbc .info {
+    font-weight: 400;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 0.1em;
+    font-size: 0.72em;
+    margin: 1em;
+    margin-top: 1em;
+  }
+  
+  .cardbc .img {
+    width: 12em;
+    height: 8em;
+    background: white;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 1.7em;
+  }
+  
+  .cardbc .share {
+    text-align: center;
+    margin-top: 1.8em;
+  }
+  
+  .cardbc a {
+    color: white;
+    transition: .4s ease-in-out;
+  }
+  
+  .cardbc a:hover {
+    color: rgb(36, 116, 221);
+  }
+  
+  .cardbc button {
+    padding: 0.8em 1.7em;
+    display: block;
+    margin: auto;
+    border-radius: 25px;
+    border: none;
+    margin-top: 2em;
+    font-weight: bold;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    transition: .4s ease-in-out;
+  }
+  
+  .cardbc button:hover {
+    background: rgb(36, 116, 221);
+    color: white;
+  }
