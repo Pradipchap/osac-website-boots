@@ -5,7 +5,9 @@ import { db } from "../config";
 import { auth } from "../config";
 import { useNavigate } from "react-router-dom";
 
+
 export default function Create(props) {
+  
   const postCollectionRef = collection(db, "blogpost");
   const [title, settitle] = useState("");
   const [desc, setdesc] = useState("");
@@ -81,11 +83,15 @@ export default function Create(props) {
               }}
             />
             <div></div>
+            
           </div>
+
+          
 
           <button className="btn" onClick={createpost}>
             Submit
           </button>
+
         </div>
       </div>
     </>
