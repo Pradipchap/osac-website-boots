@@ -14,10 +14,16 @@ import Admin from "./components/admin";
 import Blog from "./components/blogspost/blog";
 import Home from "./components/home";
 import Protected from "./components/blogspost/protected";
-import Singleblog from "./components/singleblog";
-import Message from "./components/blogspost/eachblog";
+
+import Eachblog from "./components/blogspost/eachblog";
 
 export default function App() {
+  const [blogid, setblogid] = useState('a');
+  const funcsetblogid = (id) => {
+    setblogid(id);
+    // console.log(blogid);
+  };
+
   const [isAuth, setisAuth] = useState(localStorage.getItem("isAuth"));
   // const [name, setname] = useState(localStorage.getItem("name"));
   // if(auth===null){
@@ -83,7 +89,7 @@ export default function App() {
               />
             }
           />
-          <Route exact path="/blog" element={<Blog />} />
+          <Route exact path="/blog" element={<Blog set={funcsetblogid} name={blogid} />} />
           {/* {username()==="pradipcpgn@gmail.com"? <Route
             exact
             path="/admin"
@@ -108,10 +114,7 @@ export default function App() {
             <Route exact path="/admin" element={<Admin />} />
           </Route>
 
-
-
-         
-
+          <Route exact path="/eachblog" element={<Eachblog id={blogid} />} />
         </Routes>
         {/* <Login setisAuth={setisAuth}/> */}
       </Router>

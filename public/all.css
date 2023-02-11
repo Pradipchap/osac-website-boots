@@ -6,7 +6,8 @@
     width: 100vw;
 
 }
-body{
+
+body {
     background-color: white;
 }
 
@@ -21,11 +22,11 @@ body{
 }
 
 .blogcard {
-    height: 21rem;
+    /* height: 21rem; */
     /* background-color: blue; */
-    min-width: 40rem;
-    margin-bottom:3rem;
-    max-width: 70rem;
+    /* min-width: 40rem; */
+    margin-bottom: 3rem;
+    /* max-width: 70rem; */
     /* border: 1px solid grey; */
     /* box-shadow: 2px 2px 20px 3px rgb(209, 209, 209); */
     display: flex;
@@ -38,18 +39,18 @@ body{
     border-radius: 2rem;
     background-color: black;
     /* background-image: radial-gradient(circle at left , #00a99d 70%,white 30%); */
-background-color: white;
+    background-color: white;
 
 
 }
 
 .published-title {
-    
-    color:white;
+
+    color: white;
     color: #00a99d;
     color: #28282B;
     color: black;
-    font-weight:500;
+    font-weight: 500;
     font-size: 3em;
     line-height: 86%;
 }
@@ -79,22 +80,24 @@ background-color: white;
     padding: 0;
 
 }
-.rightel h2{
+
+.rightel h2 {
     font-size: 16px;
 
 }
 
-.rightel .descc{
+.rightel .descc {
     font-weight: normal;
     font-size: 1rem;
     color: rgb(34, 33, 33);
     /* color: white; */
 
 }
-.rightel .author{
+
+.rightel .author {
     /* color:grey;
      */
-     color: black;
+    color: black;
 
     font-weight: 600;
 

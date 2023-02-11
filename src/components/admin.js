@@ -13,6 +13,8 @@ import { db } from "./config";
 import { useEffect } from "react";
 
 export default function Admin() {
+
+ 
   const [postLists, setpostLists] = useState([]);
 
   const postCollectionRef = collection(db, "blogpost");
@@ -29,6 +31,7 @@ export default function Admin() {
   };
 
   const update = (id) => {
+
     const docRef = doc(db, "blogpost", id);
     updateDoc(docRef, { approvedStatus: true });
   };
@@ -58,6 +61,7 @@ export default function Admin() {
               <h1>{element.id}</h1>
               <h1>{element.author.name}</h1>
               <button
+
                 onClick={() => {
                   publishpost(
                     element.title,
@@ -68,8 +72,11 @@ export default function Admin() {
                     element.timestamp
                   );
                   update(element.id);
+                
+                  
                 }}
                 disabled={element.approvedStatus === true ? true : false}
+
               >
                 <h1>
                   {element.approvedStatus === true ? "approved" : "publish"}

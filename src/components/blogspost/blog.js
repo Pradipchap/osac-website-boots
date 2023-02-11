@@ -2,30 +2,32 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { getDocs, collection, query, orderBy } from "firebase/firestore";
 import { db } from "../config";
-import banner2 from "../../banner2.png";
-import Blogcar from "./blogcar";
+import { useNavigate } from "react-router-dom";
 
-// import Eachblog from "./eachblog";
 
-// import { useNavigate } from "react-router-dom";
 
-export default function Blog() {
-  // let navigate = useNavigate();
+export default function Blog(props) {
+  props.set('a')
+
+
+  const navigate=useNavigate();
+
+const see=()=>{
+
+  navigate('/eachblog')
+
+}
 
   const [postLists, setpostLists] = useState([]);
 
   const repostCollectionRef = collection(db, "repost");
-  // let addedBlogs=[
-
-  //     {id:'123',title:'f',desc:'df',name:'234'},
-  //     {id:'345',title:'f',desc:'df',name:'234'},
-  //     {id:'345',title:'f',desc:'df',name:'234'}
-
-  // ];
+ 
 
   useEffect(() => {
     const getPosts = async () => {
-      const data = await getDocs(query(repostCollectionRef,orderBy('timestamp')));
+      const data = await getDocs(
+        query(repostCollectionRef, orderBy("timestamp"))
+      );
       setpostLists(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
       console.log("fetching from database");
     };
@@ -64,15 +66,31 @@ export default function Blog() {
             //     <div className="author">
             //       <h2>- by {element.name}</h2>
 
-
             //     </div>
             //   </div>
             // </div>
             <div className="blogcard" key={element.id}>
-               <Blogcar />
+              {/* <Blogcar /> */}
+              <div className="cardbc">
+                <div className="img"></div>
+                <span>{props.name}</span>
+                <p className="info">
+                  {element.desc}
 
+                </p>
+
+                <button onClick={()=>{
+                  props.set(element.id);
+                  see()
+
+
+                  
+
+                }}>see more</button>
+                <h2>{element.name}</h2>
+              </div>
+              
             </div>
-           
           );
         })}
       </div>

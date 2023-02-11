@@ -74,7 +74,9 @@
     clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    margin: auto;
+    /* margin: auto; */
+margin-top: 2rem;
+
 
   }
   
@@ -137,4 +139,14 @@
   .cardbc button:hover {
     background: rgb(36, 116, 221);
     color: white;
+  }
+  .each{
+    margin-top: 10rem;
+    position: absolute;
+
+
+  }
+  .bl{
+    height: 4rem;
+    background-color: red;
   }
