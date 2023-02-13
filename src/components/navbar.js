@@ -150,9 +150,6 @@ export default function Navbar(props) {
               <p>admin</p>
             </Link>
           )}
-          {/* <Link className="navItems" to="./admin">
-            <p>admin</p>
-          </Link> */}
         </div>
         <div className="rightItems">
           <div className="navItems search">

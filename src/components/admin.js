@@ -20,13 +20,15 @@ export default function Admin() {
   const postCollectionRef = collection(db, "blogpost");
   const repostCollectionRef = collection(db, "repost");
   // const docRef = doc(db, "blogpost", "yftq9RGp4jWNSyBZ1D6L");
-  const publishpost = async (title, desc, id, name, timestamp) => {
+  const publishpost = async (title, desc, id, name, timestamp,urlimg) => {
     await addDoc(repostCollectionRef, {
+      
       title: title,
       desc: desc,
       id: id,
       name: name,
       timestamp: timestamp,
+      urlimg:urlimg,
     });
   };
 
@@ -69,7 +71,8 @@ export default function Admin() {
                     element.id,
 
                     element.author.name,
-                    element.timestamp
+                    element.timestamp,
+                    element.urlimg,
                   );
                   update(element.id);
                 

@@ -18,9 +18,9 @@
     display: flex;
     flex-direction: column;
     z-index: 2;
-    /* background-color: transparent; */
-    /* background-color:#1ebaaf; */
-    /* background-color: red; */
+    align-items: center;
+    justify-content: center;
+
 
 }
 
@@ -100,6 +100,7 @@
     background-color: #1ebaaf;
     background-color: black;
     background-color: #28282B;
+    overflow: hidden;
 
 }
 
@@ -211,7 +212,7 @@ body {
     height: 35rem;
     width: 100%;
     top: -80px;
-   
+
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -219,12 +220,12 @@ body {
     justify-items: center;
     justify-content: center;
     align-items: center;
-    background: url(pexels.jpg) no-repeat center center fixed; 
- /* background:linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(pexels.jpg) no-repeat center fixed; */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url(pexels.jpg) no-repeat center center fixed;
+    /* background:linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(pexels.jpg) no-repeat center fixed; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
 
 }
@@ -268,10 +269,11 @@ body {
 
 .rightItems {
     display: flex;
-    width: 28rem;
+    /* width: 28rem; */
 
     justify-content: center;
     margin: 4px;
+    margin-right: 5px;
 }
 
 .navItems {
@@ -290,6 +292,7 @@ body {
     background-image: red;
     /* background-color: red; */
     display: flex;
+    text-decoration: none;
 
 
 
@@ -298,6 +301,7 @@ body {
 .navItems p:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+    text-decoration: none;
 
 }
 
@@ -309,7 +313,10 @@ body {
     color: white;
 
     cursor: pointer;
+    text-decoration: none;
+
 }
+
 
 .navItems p:after {
     content: '';
@@ -610,7 +617,7 @@ body {
     .ham {
         display: flex;
         margin: 4px;
-        /* background-color: grey; */
+
 
         height: 42%;
         max-width: 50px;
@@ -621,19 +628,19 @@ body {
         justify-content: space-around;
         justify-items: center;
         align-items: center;
+
         z-index: 5;
         margin-left: 12rem;
-        /* justify-self: flex-start;
-        align-self: flex-start; */
+
     }
 
     .f {
 
 
-        height: 2px;
+        height: 3px;
         width: 30px;
         background-color: white;
-        /* background-color: black; */
+        margin-bottom: 9px;
         border-radius: 15%;
         z-index: 4;
     }
@@ -648,14 +655,14 @@ body {
         
     } */
     .open .f3 {
-        transform: rotate(585deg)translateY(8.8px);
-        transition-duration: 1s;
+        transform: rotate(225deg)translateY(8.8px);
+        transition-duration: 0.2s;
     }
 
     .open .f1 {
-        transform: rotate(675deg)translateY(8px);
+        transform: rotate(-45deg)translateY(8px);
 
-        transition-duration: 1s;
+        transition-duration: 0.2s;
     }
 
     .close .f3 {
