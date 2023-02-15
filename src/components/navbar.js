@@ -1,16 +1,14 @@
 import React from "react";
 // import { Turn as Hamburger } from "hamburger-react";
-import { Search } from "react-feather";
+
 import { useState } from "react";
 import logo from "../osacWhiteLogo.png";
 import Sidebar from "./sidebar";
 import { Link } from "react-router-dom";
 import { GitHub } from "react-feather";
 
-// import LightModeIcon from '@mui/icons-material/LightMode';
-
 export default function Navbar(props) {
-  // const isBrowserDefaultDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+
   const linktologin = () => {
     if (props.name === "login") return "./login";
     else return null;
@@ -19,23 +17,7 @@ export default function Navbar(props) {
   const [drop, setdrop] = useState(false);
   const [hamclass, sethamclass] = useState("navItems ham close");
   const [classofsidebar, setclassofsidebar] = useState("close");
-  // const [mode, setmode] = useState('light');
-  // const [navcolor, setnavcolor] = useState("#28282B");
-  // const clickmode = () => {
-  //   if (mode === "light") {
-  //     setmode("dark");
-  //     console.log(isBrowserDefaultDark())
 
-  //     localStorage.setItem("mode", mode);
-  //     document.body.style.backgroundColor = "#28282B";
-  //   } else {
-  //     setmode("light");
-
-  //     setnavcolor("#28282B");
-  //     localStorage.setItem("mode", mode);
-  //     document.body.style.backgroundColor = "white";
-  //   }
-  // };
   const dropdown = () => {
     if (drop === false) setdrop(true);
     else setdrop(false);
@@ -46,9 +28,8 @@ export default function Navbar(props) {
   };
 
   const clickHamburger = () => {
-    // hamclassName==='navItems ham close'?sethamclass('navItems ham open'):sethamclass('navItems ham close')
     console.log("ham opened");
-    if (hamclass === "navItems ham close") {
+    if (hamclass === "navItems ham close"){
       sethamclass("navItems ham open");
       setclassofsidebar("open");
     } else {
@@ -133,9 +114,7 @@ export default function Navbar(props) {
           <Link className="navItems" to="/">
             <p>Home</p>
           </Link>
-          <Link className="navItems" to="./singleblog">
-            <p>Events</p>
-          </Link>
+
           <Link className="navItems" to="./blog">
             <p>Blogs</p>
           </Link>
@@ -152,9 +131,6 @@ export default function Navbar(props) {
           )}
         </div>
         <div className="rightItems">
-          <div className="navItems search">
-            <p>Search {<Search />}</p>
-          </div>
           <div className={hamclass} onClick={clickHamburger}>
             <div className="f f1"></div>
 

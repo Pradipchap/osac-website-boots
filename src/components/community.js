@@ -31,45 +31,19 @@ export default function Community() {
       desc: "blue",
       zindex: 2,
     },
-    {
-      img: flutter,
-      link: null,
-      desc: "green",
-      zindex: 3,
-    },
-    {
-      img: js,
-      link: null,
-      desc: "pink",
-      zindex: 4,
-    },
-    {
-      img: python,
-      link: null,
-      desc: "yellow",
-      zindex: 5,
-    },
+   
   ];
 
-  return (
-    <div className="container">
-      {/* {images.map((element) => {
-        return (
-          <div className="card"
-            // key={i}
-          // className={`item ${i === index ? 'item-active' : ''} card`}
-           >
-            <div className="card-desc">{element.desc}</div>
-            <a href={element.link}>
-              Read more
-              {<span className="material-symbols-outlined">arrow_forward</span>}
-            </a>
-          </div>
-        );
-      })} */}
-      <div className="card">
+  return <div className="upcomingevents  " style={{overflow:'auto',whiteSpace:'nowrap',marginTop:'5rem',marginBottom:'5rem'}}>
+   {
+    images.map((element)=>{
+      return(
+        <div className="container ml-1" style={{height:'25rem',maxWidth:'45rem',backgroundColor:'red',marginTop:'2rem',marginRight:'2rem',display:'inline-block'}}></div>
+      )
+    })
+   }
 
-      </div>
-    </div>
-  );
+
+
+  </div>;
 }

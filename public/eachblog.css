@@ -10,9 +10,9 @@
 
 .each {
     position: absolute;
-    /* height: 20rem; */
+
     width: 100vw;
-    background-color: green;
+
     color: black;
     margin-top: 10rem;
     display: flex;
@@ -21,7 +21,7 @@
     align-content: center;
 }
 
-.bl p {
+.bl {
     color: black;
     display: flex;
     font-display: column;

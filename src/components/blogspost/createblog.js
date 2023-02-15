@@ -25,6 +25,7 @@ export default function Create(props) {
       console.log("Uploaded a blob or file!");
       getDownloadURL(snapshot.ref).then(async (url) => {
         setimg(url);
+
         try {
           var createpost = async () => {
             await addDoc(postCollectionRef, {
@@ -73,14 +74,15 @@ export default function Create(props) {
             display: "flex",
             flexDirection: "column",
 
-            height: "40rem",
-            width: "40rem",
+            // height: "40rem",
+            // width: "40rem",
           }}
         >
           <div className="input-group">
-            <label className="label">Name</label>
+            <label className="label">Blog Title</label>
             <input
               autoComplete="off"
+              required="true"
               name="Email"
               id="Email"
               className="input"
@@ -109,9 +111,8 @@ export default function Create(props) {
                 setdesc(event.target.value);
               }}
             />
-            <div></div>
-            <br />
-            <div
+
+            {/* <div
               className="pic"
               style={{
                 height: "10rem",
@@ -119,10 +120,11 @@ export default function Create(props) {
                 backgroundColor: "red",
               }}
             >
-              <img src={img} alt="ad" />
-            </div>
-            <br />
+              <img src={null} alt="ad" />
+            </div> */}
+
             <input
+            className="file-input"
               type="file"
               onChange={(event) => {
                 getimg(event);

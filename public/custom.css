@@ -220,7 +220,7 @@ body {
     justify-items: center;
     justify-content: center;
     align-items: center;
-    background: url(pexels.jpg) no-repeat center center fixed;
+    background: url(pexels.jpg) no-repeat center center;
     /* background:linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(pexels.jpg) no-repeat center fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -406,7 +406,7 @@ body {
 .all-below {
     position: relative;
     /* background-color: green; */
-    height: 200rem;
+    /* height: 200rem; */
 
     width: 100%;
     top: 8rem;
@@ -418,13 +418,14 @@ body {
 
 .description {
     /* background-image: radial-gradient(farthest-corner at 0.5% 50%, purple, #020B2B); */
-    height: 30rem;
+
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     justify-items: center;
     flex-wrap: wrap;
+    margin-bottom: 5rem;
     /* background: white; */
     /* background-color: #F5F5F5; */
     /* background: radial-gradient(90deg #28282b 50%,white 50%); */
@@ -602,33 +603,18 @@ body {
 
     }
 
-    /* .leftItems {
-        align-self: center;
-        justify-self: center;
-        
-        margin-left: calc(42vw);
-    } */
 
-    /* .navbar {
-        justify-content: center;
-        
-    } */
 
     .ham {
         display: flex;
         margin: 4px;
-
-
         height: 42%;
         max-width: 50px;
-
-
         cursor: pointer;
         flex-direction: column;
         justify-content: space-around;
         justify-items: center;
         align-items: center;
-
         z-index: 5;
         margin-left: 12rem;
 
@@ -636,7 +622,7 @@ body {
 
     .f {
 
-
+        color: white;
         height: 3px;
         width: 30px;
         background-color: white;
@@ -645,15 +631,7 @@ body {
         z-index: 4;
     }
 
-    /* .open{
-        background-color: red;
 
-    }
-    .open .f{
-        background-color: blue;
-        
-        
-    } */
     .open .f3 {
         transform: rotate(225deg)translateY(8.8px);
         transition-duration: 0.2s;
@@ -684,52 +662,32 @@ body {
         background-color: black;
         position: absolute;
 
-        /* height: 30rem; */
-        /* width: 20rem; */
+
         z-index: -3;
         top: 12rem;
         right: 15rem;
-        /* display: block; */
-        /* transform: translate(-26rem); */
-        /* animation-duration: 2s; */
-
-        /* z-index: 5; */
+        
         display: none;
 
     }
 
 
     .sidebaropen {
-        /* position: absolute; */
+
         position: fixed;
         z-index: -1;
         background-color: #1E2952;
-
-        /* background-color: #fff; */
         box-sizing: border-box;
-        /* box-shadow: 0 5px 15px silver; */
-        /* box-shadow: 0 5px 15px -5px silver; */
-
-        /* background-image: linear-gradient(blue,black); */
         height: 5rem;
         width: 100%;
-        /* z-index: 2; */
         border: none;
         bottom: 0px;
         border-radius: 30px 30px 0 0;
         background-color: #e5e4e2;
 
-
-
-        /* left: -10rem; */
-
-
-        /* transform: translateY(0rem); */
         transition-duration: 0.4s;
 
         display: flex;
-        /* flex-direction: column; */
-
         align-items: center;
         justify-content: space-around;
 
@@ -865,7 +823,7 @@ body {
     }
 
     .all-below {
-        height: 133rem;
+        /* height: 133rem; */
     }
 }
 
@@ -1030,30 +988,12 @@ p {
     }
 }
 
-/* .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20rem;
-    background-color: black;
-    flex-wrap: wrap;
 
-}
-
-.card {
-    height: 17rem;
-    margin-left: 4px;
-    min-width: 23rem;
-    border: 2px solid black;
-    background-color: #00a99d;
-
-
-} */
 
 .blog {
     position: absolute;
     margin-top: 10rem;
-    /* height: 100rem; */
+    align-items: center;
     width: 100%;
 
     display: flex;
@@ -1120,6 +1060,7 @@ p {
     font-weight: bold;
     z-index: 3;
     margin-top: 20px;
+    margin-bottom: 5rem;
 }
 
 .btn::before {
@@ -1161,13 +1102,27 @@ p {
     color: aliceblue;
 }
 
+.input-group {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-input {
+    margin-block: 3rem;
+
+}
+
 .publishedBlogs {
 
 
 
 
-    position: relative;
+    /* position: relative; */
     display: flex;
+    font-display: column;
     place-content: center;
     place-items: center;
     overflow: hidden;
