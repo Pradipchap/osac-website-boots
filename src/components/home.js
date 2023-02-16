@@ -8,8 +8,9 @@ export default function Home() {
   return (
 <>
 <div className="homelow">
+<Hometop />
                 <div className="all-below">
-                  <Hometop />
+                  
                   <Main />
                   <Community />
                   <Footer />

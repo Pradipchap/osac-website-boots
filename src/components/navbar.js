@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { GitHub } from "react-feather";
 
 export default function Navbar(props) {
-
   const linktologin = () => {
     if (props.name === "login") return "./login";
     else return null;
@@ -29,7 +28,7 @@ export default function Navbar(props) {
 
   const clickHamburger = () => {
     console.log("ham opened");
-    if (hamclass === "navItems ham close"){
+    if (hamclass === "navItems ham close") {
       sethamclass("navItems ham open");
       setclassofsidebar("open");
     } else {
@@ -75,9 +74,7 @@ export default function Navbar(props) {
           )}
           <a
             className=""
-            // href={'./login'}
             href={linktologin()}
-            // onClick={props.logfunc}
             onClick={dropdown}
             style={{
               cursor: "pointer",
@@ -87,58 +84,42 @@ export default function Navbar(props) {
               fontWeight: "bold",
             }}
           >
-            {/* <img
-              src=""
-              alt="s"
-              style={{ borderRadius: "100%",width:'40px',marginTop:'5px' }}
-            /> */}
-            {/* {props.name==="login"?"login":<div className="profile"><p>{props.name.charAt(0)}</p></div >} */}
-
             {props.name === "login" ? "login" : props.name}
           </a>
-          {/* <div
-            className={mode}
-            onClick={clickmode}
-            style={{ borderRadius: "100%", marginRight: "20px" }}
-          ></div> */}
         </div>
       </div>
-      <div className="navbar" style={{ backgroundColor: `#28282B` }}>
-        <div className="leftItems">
-          <img
-            src={logo}
-            className="navItems logo"
-            alt="logo of OSAC"
-            onClick={home}
-          />
-          <Link className="navItems" to="/">
-            <p>Home</p>
-          </Link>
+      <div className="nabar" style={{ backgroundColor: `#28282B` }}>
+        <img
+          src={logo}
+          className="navItems logo"
+          alt="logo of OSAC"
+          onClick={home}
+        />
+        <Link className="navItems" to="/">
+          <p>Home</p>
+        </Link>
 
-          <Link className="navItems" to="./blog">
-            <p>Blogs</p>
-          </Link>
-          {/* { !props.is?<Link className="navItems" to='./login'><p>Login</p></Link>:<p className="navItems" onClick={props.logfunc} style={{cursor:'pointer'}}>Logout</p>} */}
-          {props.is && (
-            <Link className="navItems" to="./createblog">
-              <p>create</p>
-            </Link>
-          )}
-          {props.name === "pradipcpgn@gmail.com" && (
-            <Link className="navItems" to="./admin">
-              <p>admin</p>
-            </Link>
-          )}
-        </div>
-        <div className="rightItems">
-          <div className={hamclass} onClick={clickHamburger}>
-            <div className="f f1"></div>
+        <Link className="navItems" to="./blog">
+          <p>Blogs</p>
+        </Link>
 
-            <div className="f f3"></div>
-          </div>
+        {props.is && (
+          <Link className="navItems" to="./createblog">
+            <p>create</p>
+          </Link>
+        )}
+        {props.name === "pradipcpgn@gmail.com" && (
+          <Link className="navItems" to="./admin">
+            <p>admin</p>
+          </Link>
+        )}
+        <div className={hamclass} onClick={clickHamburger}>
+          <div className="f f1"></div>
+
+          <div className="f f3"></div>
         </div>
       </div>
-      {/* <Hamburger /> */}
+
       <Sidebar c={classofsidebar} />
     </div>
   );

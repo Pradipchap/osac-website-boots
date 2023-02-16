@@ -18,10 +18,10 @@ export default function Main() {
       </div>
 
       <div className="desc-text">
-        <p className="about-us" style={{ color: "white" }}>
-          About Us
+        <p className="about-us" style={{ color: "black" }}>
+About Us
         </p>
-        <p className="para">
+        <p className="para" style={{}}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
           dolore minima rerum, tempora aperiam aut minus ipsum vero deserunt.
           Commodi quas voluptate eos libero unde odit nam quam! Deleniti sunt
@@ -29,14 +29,15 @@ export default function Main() {
           commodi sapiente eos tenetur neque incidunt accusamus reiciendis, fuga
           ipsam itaque enim voluptates recusandae necessitatibus? Asperiores
           enim voluptatem architecto sequi totam. Ex odio possimus quae eaque
-          fugiat nesciunt natus, minima adipisci doloribus nulla explicabo
-          recusandae vero corrupti veritatis architecto, debitis inventore
-          illum! Minima ut quidem vero, doloremque natus veniam atque quas unde
-          voluptate!
+
         </p>
-        <div className={`button ${view}`}>
-          <p className="btn-name">Join us</p>
-        </div>
+
+        <button
+          className=" buttonbtn bg-info p-2"
+          style={{ width: "7rem", fontSize: "17px" }}
+        >
+          Join Us
+        </button>
       </div>
     </div>
   );
