@@ -13,10 +13,11 @@ export default function Navbar(props) {
     else return null;
   };
 
+  
   const [drop, setdrop] = useState(false);
   const [hamclass, sethamclass] = useState("navItems ham close");
   const [classofsidebar, setclassofsidebar] = useState("close");
-
+const [navclass, setnavclass] = useState('navclose')
   const dropdown = () => {
     if (drop === false) setdrop(true);
     else setdrop(false);
@@ -25,17 +26,29 @@ export default function Navbar(props) {
     setdrop(false);
     props.logfunc();
   };
+  const style = {
+    display:'flex',
+
+    flexDirection:classofsidebar==='open'?'column':'row',
+    transition: "height 1.5s ease-in-out",
+    // marginTop:'40px'
+    
+  };
 
   const clickHamburger = () => {
     console.log("ham opened");
     if (hamclass === "navItems ham close") {
       sethamclass("navItems ham open");
       setclassofsidebar("open");
+      setnavclass('navopen mt-3 mb-2')
     } else {
       sethamclass("navItems ham close");
       setclassofsidebar("close");
+      setnavclass('navclose');
     }
   };
+
+  
   const home = () => {
     window.location = "/";
   };
@@ -65,7 +78,7 @@ export default function Navbar(props) {
               <ul>
                 <li>my Account</li>
                 <li>
-                  <div onClick={handlelogout} style={{ cursor: "pointer" }}>
+                  <div onClick={handlelogout} style={{ cursor: "pointer" ,}}>
                     logout
                   </div>
                 </li>
@@ -88,23 +101,23 @@ export default function Navbar(props) {
           </a>
         </div>
       </div>
-      <div className="nabar" style={{ backgroundColor: `#28282B` }}>
+      <div className="nabar" style={style}>
         <img
           src={logo}
-          className="navItems logo"
+          className={`navItems logo ${navclass}`}
           alt="logo of OSAC"
           onClick={home}
         />
-        <Link className="navItems" to="/">
+        <Link className={`navItems ${navclass}`} to="/">
           <p>Home</p>
         </Link>
 
-        <Link className="navItems" to="./blog">
+        <Link className={`navItems ${navclass}`} to="./blog">
           <p>Blogs</p>
         </Link>
 
         {props.is && (
-          <Link className="navItems" to="./createblog">
+          <Link className={`navItems ${navclass}`}to="./createblog">
             <p>create</p>
           </Link>
         )}
@@ -113,7 +126,7 @@ export default function Navbar(props) {
             <p>admin</p>
           </Link>
         )}
-        <div className={hamclass} onClick={clickHamburger}>
+        <div className={hamclass+' '+navclass} onClick={clickHamburger}>
           <div className="f f1"></div>
 
           <div className="f f3"></div>

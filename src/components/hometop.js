@@ -68,7 +68,7 @@ const [h, seth] = useState(window.innerWidth/Math.log(window.innerWidth)+150)
         <p style={{ color: "white" }}>Join Us</p>
       </div> */}
 
-    <img src={osac} alt="" style={{height:'100%',width:'60%'}} />
+    <img src={osac} alt="" style={{height:'90%',width:'50%'}} />
     
     </div>
     

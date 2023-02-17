@@ -7,6 +7,17 @@ import { useNavigate } from "react-router-dom";
 import Toploader from "../toploader";
 
 export default function Blog(props) {
+  const returnCamel = function (sentenc) {
+    const words = sentenc.split(" ");
+    const nword = [];
+    for (let i = 0; i < words.length; i++) {
+      const nword1 = words[i][0].toUpperCase() + words[i].slice(1);
+      nword.push(nword1);
+    }
+
+    return nword.join(" ");
+  };
+
   const [load, setload] = useState(false);
   props.set("a");
 
@@ -62,24 +73,27 @@ export default function Blog(props) {
       );
       setload(false);
       setpostLists(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
-      console.log("fetching from database");
+      
     };
-    setTimeout(getPosts, 1000);
+    console.log("fetching from database");
+    // setTimeout(getPosts, 1000);
+    getPosts();
 
-    console.log(1);
+    
   }, []);
+  console.log(1);
 
   return (
     <div className="allBlog ">
-      <div className="allblogs">
-        <div class="container single" id="b">
-          <div class="mainheading">
-            <h1 class="sitetitle">OSAC Blogs</h1>
-            <p class="lead">Blogs made by OSAC members!</p>
+      <div className="allblogs ">
+        <div className="container single" id="b">
+          <div className="mainheading">
+            <h1 className="sitetitle">OSAC Blogs</h1>
+            <p className="lead">Blogs made by OSAC members!</p>
           </div>
 
-          <section class="featured-posts">
-            <div class="section-title">
+          <section className="featured-posts">
+            <div className="section-title">
               <h2>
                 <span>Featured</span>
               </h2>
@@ -87,22 +101,26 @@ export default function Blog(props) {
             {load === true ? (
               <Toploader />
             ) : (
-              <div class="card-columns listfeaturedtag">
+              <div className="card-columns listfeaturedtag">
                 {postLists.map((element) => {
                   return (
                     <div
-                      class="card"
+                      className="card"
                       id={element.id}
                       onClick={() => {
                         props.set(element.id);
                         localStorage.setItem("blogid", element.id);
                         see();
                       }}
+                      style={{
+                        backgroundColor: "",
+                        border: "2px solid white",
+                      }}
                     >
-                      <div class="row">
-                        <div class="col-md-5 wrapthumbnail">
+                      <div className="row">
+                        <div className="col-md-5 wrapthumbnail">
                           <span href="/" style={{ pointerEvents: "none" }}>
-                            <div class="thumbnail">
+                            <div className="thumbnail">
                               <img
                                 src={element.urlimg}
                                 alt="as"
@@ -111,31 +129,36 @@ export default function Blog(props) {
                             </div>
                           </span>
                         </div>
-                        <div class="col-md-7">
-                          <div class="card-block">
-                            <h2 class="card-title" style={{ color: "black" }}>
+                        <div className="col-md-7">
+                          <div className="card-block">
+                            <h2
+                              className="card-title"
+                              style={{ color: "black" }}
+                            >
                               {element.title}
                             </h2>
-                            <h4 class="card-text">
+                            <h4 className="card-text">
                               {element.desc.slice(0, 70)}
                             </h4>
-                            <div class="metafooter">
-                              <div class="wrapfooter">
-                                <span class="meta-footer-thumb">
+                            <div className="metafooter">
+                              <div className="wrapfooter">
+                                <span className="meta-footer-thumb">
                                   <a href="author.html">
                                     <img
-                                      class="author-thumb"
+                                      className="author-thumb"
                                       src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x"
                                       alt="Sal"
                                     />
                                   </a>
                                 </span>
-                                <span class="author-meta">
-                                  <span class="post-name">
-                                    <a href="author.html">{element.name}</a>
+                                <span className="author-meta">
+                                  <span className="post-name ">
+                                    <a href="author.html">
+                                      {returnCamel(element.name)}
+                                    </a>
                                   </span>
                                   <br />
-                                  <span class="post-date">
+                                  <span className="post-date">
                                     {element.timestamp.toDate().getDate() +
                                       " " +
                                       providedate(
@@ -148,18 +171,18 @@ export default function Blog(props) {
                                         .toString()
                                         .slice(2)}
                                   </span>
-                                  <span class="dot"></span>
-                                  <span class="post-read">
+                                  <span className="dot"></span>
+                                  <span className="post-read">
                                     {Math.ceil(
                                       (element.desc.length * 0.0458) / 60
                                     )}{" "}
                                     min read
                                   </span>
                                 </span>
-                                <span class="post-read-more">
+                                <span className="post-read-more">
                                   <a href="post.html" title="Read Story">
                                     <svg
-                                      class="svgIcon-use"
+                                      className="svgIcon-use"
                                       width="25"
                                       height="25"
                                       viewbox="0 0 25 25"

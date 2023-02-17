@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export default function Create(props) {
-  const [img, setimg] = useState(null);
+  // const [img, setimg] = useState(null);
 
   const storage = getStorage();
 
@@ -24,7 +24,7 @@ export default function Create(props) {
     uploadBytes(spaceRef, fileItem).then((snapshot) => {
       console.log("Uploaded a blob or file!");
       getDownloadURL(snapshot.ref).then(async (url) => {
-        setimg(url);
+        // setimg(url);
 
         try {
           var createpost = async () => {
@@ -87,7 +87,7 @@ export default function Create(props) {
               id="Email"
               className="input"
               cols="45"
-              style={{ width: "25rem" }}
+              style={{ width: "40rem" }}
               type="email"
               onChange={(event) => {
                 settitle(event.target.value);
@@ -99,18 +99,32 @@ export default function Create(props) {
             <label className="label">Content</label>
             <textarea
               autoComplete="off"
-              name="Email"
+              name="content"
               id="Email"
               rows="30"
               cols="45"
               height="4rem"
-              style={{ width: "25rem", height: "25rem" }}
+              style={{ height: "25rem",width:'40rem' }}
               className="input"
               type="email"
               onChange={(event) => {
                 setdesc(event.target.value);
               }}
             />
+            {/* <textarea
+              autoComplete="off"
+              name="Email"
+              id="Email"
+              rows="30"
+              cols="20"
+              height="2rem"
+              style={{ width: "40rem", height: "15rem" ,marginTop:'2rem'}}
+              className="input"
+              type="text"
+              onChange={(event) => {
+                setdesc(event.target.value);
+              }}
+            /> */}
 
             {/* <div
               className="pic"

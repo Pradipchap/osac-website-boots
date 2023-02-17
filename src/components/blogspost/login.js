@@ -27,12 +27,9 @@ export default function Login(props) {
           <GoogleIcon fontSize="large" />{" "}
           <p style={{ color: "white" }}>Sign with google</p>
         </div>
-        <p>Sign In With Facebook to Continue</p>
 
-        <div className="login-with-google-btn" onClick={props.signInWithGoogle}>
-          <FacebookIcon fontSize="large" />{" "}
-          <p style={{ color: "white" }}>Sign with Facebook</p>
-        </div>
+
+        
       </div>
     </div>
   );

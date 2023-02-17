@@ -67,41 +67,13 @@
     margin-bottom: 10rem;
 }
 
-.allblog {
-    /* position: relative; */
 
-/* position: absolute;
-
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* position: absolute; */
-
-
-}
 #b{
     margin-top: 10rem;position: absolute;
     margin-inline: auto;
 }
 
-.allBlogs {
-    /* background-color: green; */
-    /* position: absolute;
-    top: 5rem; */
 
-    /* display: flex;
-    flex-wrap: wrap;
-
-    margin-top: 40rem; */
-    /* justify-content: center;
-    align-items: center; */
-    /* align-items: center; */
-    /* justify-content: space-around;  */
-    /* margin: auto; */
-    /* border-top: 1px solid grey; */
-
-}
 
 .carda {
     margin-inline: 5rem;
@@ -184,10 +156,18 @@
     background-color: #ffcaa6;
 }
 
-.container .single {
-    /* top: 10rem;
-    position: absolute; */
-    /* margin-top: 20rem;  */
-    /* display: flex;
-    flex-direction: column;*/
+
+
+.navopen{
+display: block;
+}
+pre{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;  
+    word-wrap: break-word;
+
+  
+
+
 }

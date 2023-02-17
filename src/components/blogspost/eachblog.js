@@ -5,7 +5,11 @@ import { db } from "../config";
 
 export default function Eachblog(props) {
   const [first, setfirst] = useState({});
-  const singledocref = doc(db, "repost", props.id==='a'?localStorage.getItem('blogid'):props.id);
+  const singledocref = doc(
+    db,
+    "repost",
+    props.id === "a" ? localStorage.getItem("blogid") : props.id
+  );
 
   useEffect(() => {
     const get = async () => {
@@ -74,60 +78,63 @@ export default function Eachblog(props) {
             </p>
           </div>
         )} */}
-        {
-          first.desc!==undefined&& <div class="col-md-8 col-md-offset-2 col-xs-12">
-          <div class="mainheading">
-            <div class="row post-top-meta">
-              <div class="col-md-2">
-                <a href="author.html">
-                  <img
-                    class="author-thumb"
-                    src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x"
-                    alt="Sal"
-                  />
-                </a>
+        {first.desc !== undefined && (
+          <div className="col-md-8 col-md-offset-2 col-xs-12">
+            <div className="mainheading">
+              <div className="row post-top-meta">
+                <div className="col-md-2">
+                  <a href="author.html">
+                    <img
+                      className="author-thumb"
+                      src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x"
+                      alt="Sal"
+                    />
+                  </a>
+                </div>
+                <div className="col-md-10">
+                  <p className="link-dark">{first.name}</p>
+                  <span className="author-description">.</span>
+                  <span className="post-date">
+                    {first.timestamp !== undefined &&
+                      first.timestamp.toDate().getDate() +
+                        " " +
+                        providedate(first.timestamp.toDate().getMonth()) +
+                        " " +
+                        first.timestamp
+                          .toDate()
+                          .getFullYear()
+                          .toString()
+                          .slice(2)}
+                  </span>
+                  <span className="dot"></span>
+                  <span className="post-read">
+                    {Math.ceil((first.desc.length * 0.0458) / 60)} min read
+                  </span>
+                </div>
               </div>
-              <div class="col-md-10">
-                <p class="link-dark">{first.name}</p>
-                <span class="author-description">
-                  .
-                </span>
-                <span class="post-date">
-                  {first.timestamp !== undefined &&
-                    first.timestamp.toDate().getDate() +
-                      " " +
-                      providedate(first.timestamp.toDate().getMonth()) +
-                      " " +
-                      first.timestamp
-                        .toDate()
-                        .getFullYear()
-                        .toString()
-                        .slice(2)}
-                </span>
-                <span class="dot"></span>
-                <span class="post-read">{Math.ceil((first.desc.length*0.0458)/60)} min read</span>
-              </div>
+
+              <h1 className="posttitle">{first.title}</h1>
             </div>
 
-            <h1 class="posttitle">{first.title}</h1>
+            <img className="featured-image img-fluid" src={first.urlimg} alt="z" />
+
+            <div className="article-post">
+              <pre
+                className="blogd"
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontSize: "1.2em",
+                }}
+              >
+                {first.desc}
+              </pre>
+              <blockquote style={{ wordWrap: "break-word" }}>
+                If you want to write a blog about different programs conducted
+                by Open Source Ascol Circle Please Sign in with your account .
+              </blockquote>
+            </div>
           </div>
-
-          <img class="featured-image img-fluid" src={first.urlimg} alt="z" />
-
-          <div class="article-post">
-            <p>{first.desc}</p>
-            <blockquote>
-              Gen-z strategy long tail churn rate seed money channels user
-              experience incubator startup partner network low hanging fruit
-              direct mailing. Client backing success startup assets responsive
-              web design burn rate A/B testing metrics first mover advantage
-              conversion.
-            </blockquote>
-          </div>
-        </div>
-        }
-
-       
+        )}
       </div>
     </div>
   );
